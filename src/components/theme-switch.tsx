@@ -12,6 +12,8 @@ export function ModeToggle() {
   return (
     <Button
       variant="ghost"
+      className="rounded-full"
+      size="sm"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
       {theme === "light" ? <Moon /> : <Sun />}
