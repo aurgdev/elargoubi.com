@@ -7,10 +7,32 @@ import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { useState } from "react";
 import Link from "next/link";
 import { ModeToggle } from "./theme-switch";
+import { cn } from "@/lib/utils";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
+  const data = [
+    {
+      title: "About",
+      href: "/about",
+    },
+    {
+      title: "Projects",
+      href: "/projects",
+    },
+    {
+      title: "Blog",
+      href: "/blog",
+    },
+    {
+      title: "Contact",
+      href: "/contact",
+    },
+  ];
   const [showNav, setShowNav] = useState<boolean>(false);
   const [hidden, setHidden] = useState(false);
+
+  const pathname = usePathname();
 
   const { scrollY } = useScroll();
 
@@ -27,10 +49,13 @@ export default function Navbar() {
 
   return (
     <motion.nav
-      className={`fixed inset-0 top-4 w-[95%] sm:w-[90%] mx-auto  bg-primary/15 font-medium  flex  max-sm:justify-between gap-4 px-3 max-w-7xl items-center rounded-full font-mono h-14 p-5 overflow-hidden backdrop-blur-lg`}
+      className={cn(
+        "fixed inset-0 top-4 w-[95%] sm:w-[90%] mx-auto bg-primary/15 font-medium flex max-sm:justify-between gap-4 px-3 max-w-7xl items-center rounded-full font-mono h-14 p-5 overflow-hidden backdrop-blur-lg",
+        hidden ? "shadow-md" : ""
+      )}
       variants={{
-        long: { maxWidth: 950 },
-        short: { maxWidth: 280 },
+        long: { maxWidth: 1280 },
+        short: { maxWidth: 580 },
         hideNav: {
           height: 56,
           borderRadius: 50,
@@ -55,14 +80,17 @@ export default function Navbar() {
       }}
     >
       <div className="min-w-[40px] min-h-[40px] rounded-full gap-2  flex items-center justify-center">
-        <Image src={"/favicon.ico"} alt="logo" width={44} height={44} />
+        <Link href={"/"}>
+          {/* <Image src={"/favicon.ico"} alt="logo" width={44} height={44} /> */}
+          logo
+        </Link>
       </div>
       <motion.ul
         className={`w-full ${
           showNav
             ? "[--display-from:none] [--display-to:flex]"
             : "max-sm:[--display-from:none] sm:[--display-to:flex]"
-        }  [--opacity-from:0.1] [--opacity-to:1] flex-col sm:flex-row items-center justify-center gap-10 max-sm:gap-5 max-sm:pt-10`}
+        }  [--opacity-from:0.1] [--opacity-to:1] flex-col sm:flex-row items-center justify-center gap-10 max-sm:gap-5 max-sm:pt-0`}
         variants={{
           hidden: {
             display: "var(--display-from, none)",
@@ -77,11 +105,23 @@ export default function Navbar() {
         }}
         initial={"hidden"}
         animate={[
-          hidden && !showNav ? "hidden" : "visible",
-          showNav ? "visible" : "",
+          // hidden && !showNav ? "hidden" : "visible",
+          // showNav ? "visible" : "",
+          "visible",
         ]}
       >
-        <li>
+        {data.map((item) => (
+          <li
+            key={item.title}
+            className={cn(
+              "hover:font-semibold",
+              pathname === item.href ? "font-semibold" : ""
+            )}
+          >
+            <Link href={item.href}>{item.title}</Link>
+          </li>
+        ))}
+        {/* <li>
           <Link href={"#about"}>{"About"}</Link>
         </li>
         <li>
@@ -89,11 +129,11 @@ export default function Navbar() {
         </li>
         <li>
           <Link href={"#projects"}>{"Projects"}</Link>
-        </li>
+        </li> */}
       </motion.ul>
-
+      {/* 
       <motion.div
-        className="w-full [--display-from:none][--display-to:inline-block] "
+        className="w-full [--display-from:none][--display-to:inline-block]"
         variants={{
           hidden: {
             display: "var(--display-from, none)",
@@ -110,8 +150,9 @@ export default function Navbar() {
         <Button variant={"accent"} className="w-full">
           Contact
         </Button>
-      </motion.div>
-      <ModeToggle />
+      </motion.div> */}
+      {!showNav ? <ModeToggle /> : null}
+      {/* <ModeToggle /> */}
 
       <Button
         size={"icon"}

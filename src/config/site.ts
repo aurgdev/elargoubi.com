@@ -1,6 +1,6 @@
 
 export const siteConfig = {
-  name: "Mohamed El argoubi | Full stack web developer",
+  name: "Mohamed El argoubi | Software engineer",
   description:
     "Mohamed El argoubi is a Software Developer and Technical Writer who is passionate about building solutions and contributing to open source communities",
   url: "https://elargoubi.com",
