@@ -1,16 +1,12 @@
 import type { Metadata, Viewport } from "next";
-import { Inter as FontSans } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { siteConfig } from "@/config/site";
 import Navbar from "@/components/Navbar";
 import { cn } from "@/lib/utils";
-import { Footer } from "@/components/Footer";
-
-const fontSans = FontSans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
+import Footer from "@/components/Footer";
 
 export const viewport: Viewport = {
   themeColor: [
@@ -65,7 +61,8 @@ export default function RootLayout({
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable
+          GeistSans.variable,
+          GeistMono.variable
         )}
       >
         <ThemeProvider
@@ -75,10 +72,17 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          {children}
+          <main className="max-w-7xl mx-auto md:px-16 px-6 lg:mt-44 mt-32">
+            {children}
+          </main>
           <Footer />
         </ThemeProvider>
       </body>
+      <script
+        defer
+        src="https://us.umami.is/script.js"
+        data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID || ""}
+      ></script>
     </html>
   );
 }
