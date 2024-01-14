@@ -7,7 +7,7 @@ import Navbar from "@/components/Navbar";
 import { cn } from "@/lib/utils";
 import { Footer } from "@/components/Footer";
 
-export const fontSans = FontSans({
+const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
 });
@@ -76,7 +76,7 @@ export default function RootLayout({
         >
           <Navbar />
           {children}
-          {/* <Footer /> */}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
