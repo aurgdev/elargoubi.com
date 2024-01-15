@@ -18,7 +18,7 @@ export default async function Project() {
   });
 
   return (
-    <main className="max-w-7xl mx-auto md:px-16 px-6">
+    <main className="max-w-7xl mx-auto md:px-16 px-6 lg:mt-44 mt-32">
       <header className="max-w-2xl mb-16">
         <Slide>
           <h1 className="font-incognito font-black tracking-tight sm:text-5xl text-3xl mb-6 lg:leading-[3.7rem]">

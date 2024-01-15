@@ -10,6 +10,7 @@ import { ModeToggle } from "./theme-switch";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
 import UnmountStudio from "./pages/Unmount";
+import { Logo } from "./logo";
 
 export default function Navbar() {
   const [mount, setMount] = useState<boolean>(false);
@@ -89,10 +90,7 @@ export default function Navbar() {
           className="min-w-[40px] min-h-[40px] rounded-full gap-2  flex items-center justify-center"
           onClick={() => setShowNav(false)}
         >
-          <Link href={"/"}>
-            {/* <Image src={"/favicon.ico"} alt="logo" width={44} height={44} /> */}
-            logo
-          </Link>
+          <Logo />
         </div>
         <motion.ul
           className={`w-full ${

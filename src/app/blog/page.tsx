@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default async function Blog() {
   return (
-    <>
+    <main className="max-w-7xl mx-auto md:px-16 px-6 lg:mt-44 mt-32">
       <section className="max-w-[950px] mb-12 pb-12 border-b dark:border-zinc-800 border-zinc-100">
         <div className="max-w-2xl">
           <Slide>
@@ -35,6 +35,6 @@ export default async function Blog() {
         </div>
         <Posts />
       </Slide>
-    </>
+    </main>
   );
 }

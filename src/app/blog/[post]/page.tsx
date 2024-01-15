@@ -86,7 +86,7 @@ export default async function Post({ params }: Props) {
   }
 
   return (
-    <>
+    <main className="max-w-7xl mx-auto md:px-16 px-6 lg:mt-44 mt-32">
       <header>
         <Slide className="relative flex items-center gap-x-2 border-b dark:border-zinc-800 border-zinc-200 pb-8">
           <Link
@@ -228,6 +228,6 @@ export default async function Post({ params }: Props) {
         </h3>
         <BuyMeACoffee />
       </section>
-    </>
+    </main>
   );
 }

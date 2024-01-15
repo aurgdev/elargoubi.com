@@ -19,7 +19,7 @@ export default async function Home() {
   });
 
   return (
-    <>
+    <main className="max-w-7xl mx-auto md:px-16 px-6 lg:mt-44 mt-32">
       <section className="flex lg:flex-row flex-col items-center justify-between gap-x-12 mb-16 overflow-hidden">
         {profile &&
           profile.map((data) => (
@@ -71,6 +71,6 @@ export default async function Home() {
           <EmptyState value="Projects" />
         )}
       </Slide>
-    </>
+    </main>
   );
 }

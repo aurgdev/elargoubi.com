@@ -1,5 +1,5 @@
 import Image from "next/image";
-// import FeaturedPosts from "../pages/FeaturedPosts";
+import FeaturedPosts from "./featured-post";
 
 type props = {
   title: string;
@@ -8,7 +8,7 @@ type props = {
 
 export default function NotFoundComponent({ title, description }: props) {
   return (
-    <main className="min-h-[60vh] max-w-7xl mx-auto md:px-16 px-6 mt-[calc(16px+56px)]">
+    <main className="min-h-[60vh] max-w-7xl mx-auto md:px-16 px-6 mt-32 lg:mt-44">
       <header className="max-w-4xl">
         <Image
           width={80}
@@ -25,7 +25,7 @@ export default function NotFoundComponent({ title, description }: props) {
       </header>
 
       <div className="max-w-4xl grid lg:grid-cols-2 grid-cols-1 gap-4 mt-12">
-        {/* <FeaturedPosts /> */}
+        <FeaturedPosts />
       </div>
     </main>
   );

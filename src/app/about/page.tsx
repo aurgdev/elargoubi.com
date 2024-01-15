@@ -20,7 +20,7 @@ export default async function About() {
   });
 
   return (
-    <>
+    <main className="max-w-7xl mx-auto md:px-16 px-6 lg:mt-44 mt-32">
       {profile &&
         profile.map((data) => (
           <div key={data._id}>
@@ -95,6 +95,6 @@ export default async function About() {
             </Slide>
           </div>
         ))}
-    </>
+    </main>
   );
 }
