@@ -103,7 +103,7 @@ export default async function Post({ params }: Props) {
       <article>
         <Slide className="flex lg:flex-row flex-col relative" delay={0.1}>
           <div className="min-h-full lg:border-r border-r-0 dark:border-zinc-800 border-zinc-200 basis-3/4 pt-10 pb-4 lg:pr-6 px-0">
-            <div className="flex items-center gap-x-4 text-md mb-8 dark:text-zinc-400 text-zinc-600">
+            <div className="flex items-center gap-x-4 text-md mb-8 opacity-80 dark:opacity-70">
               <div className="flex items-center gap-x-2">
                 <Calendar />
                 <time dateTime={post.date ? post.date : post._createdAt}>
@@ -127,7 +127,7 @@ export default async function Post({ params }: Props) {
             <h1 className="font-incognito font-semibold tracking-tight sm:text-[2.5rem] lg:leading-none leading-tight text-3xl mb-4">
               {post.title}
             </h1>
-            <p className="dark:text-zinc-400 text-zinc-600 max-w-2xl">
+            <p className="opacity-80 dark:opacity-70 max-w-2xl">
               {post.description}
             </p>
             <div className="relative w-full h-40 pt-[52.5%] mt-12">
@@ -142,7 +142,7 @@ export default async function Post({ params }: Props) {
               />
             </div>
 
-            <div className="mt-8 dark:text-zinc-400 text-zinc-600 leading-relaxed tracking-tight text-lg">
+            <div className="mt-8 opacity-80 dark:opacity-70 leading-relaxed tracking-tight text-lg">
               <PortableText value={post.body} components={CustomPortableText} />
             </div>
           </div>

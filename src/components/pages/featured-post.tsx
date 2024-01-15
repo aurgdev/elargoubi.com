@@ -39,7 +39,7 @@ export default async function FeaturedPosts({ params }: { params?: string }) {
                 <h2 className="max-w-sm text-lg tracking-tight mb-4">
                   {post.title}
                 </h2>
-                <p className="dark:text-zinc-400 text-zinc-600 text-sm">
+                <p className="opacity-80 dark:opacity-70 text-sm">
                   {post.description.slice(0, 80).padEnd(83, "...")}
                 </p>
               </div>

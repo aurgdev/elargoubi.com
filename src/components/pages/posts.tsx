@@ -40,7 +40,7 @@ export default async function Posts() {
                     <h2 className="max-w-sm text-2xl font-semibold tracking-tight mb-4">
                       {post.title}
                     </h2>
-                    <p className="dark:text-zinc-400 text-zinc-600 text-[15.5px]">
+                    <p className="opacity-80 dark:opacity-70 text-[15.5px]">
                       {post.description}
                     </p>
                     <div className="flex items-center gap-x-4 mt-3 text-sm">

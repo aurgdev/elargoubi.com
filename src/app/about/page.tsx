@@ -32,7 +32,7 @@ export default async function About() {
                     ... .
                   </h1>
 
-                  <div className="dark:text-zinc-400 text-zinc-600 leading-relaxed">
+                  <div className="text-secondary-foreground/80 leading-relaxed">
                     <PortableText
                       value={data.fullBio}
                       components={CustomPortableText}
