@@ -13,7 +13,7 @@ export default function EmptyState({ value, icon }: stateType) {
           <Image
             width={100}
             height={100}
-            src={"/where-you.gif"}
+            src={"/searching-duck.gif"}
             alt="where ?"
           />
         )}
