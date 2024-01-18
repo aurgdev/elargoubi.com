@@ -26,7 +26,6 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sanity": "^3.25.0",
-    "sharp": "^0.33.2",
     "styled-components": "^6.1.8",
     "tailwind-merge": "^2.2.0",
     "tailwindcss-animate": "^1.0.7"
