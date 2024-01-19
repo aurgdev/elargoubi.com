@@ -74,11 +74,6 @@ export default function RootLayout({
           <Footer />
         </ThemeProvider>
       </body>
-      <script
-        defer
-        src="https://us.umami.is/script.js"
-        data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID || ""}
-      ></script>
     </html>
   );
 }

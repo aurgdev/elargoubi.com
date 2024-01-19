@@ -61,14 +61,14 @@ export default async function Home() {
                 <Link
                   href={`/projects/${project.slug}`}
                   key={project._id}
-                  className="flex items-center gap-x-4 dark:bg-primary-bg bg-zinc-50 border border-transparent dark:hover:border-zinc-700 hover:border-zinc-200 p-4 rounded-lg"
+                  className="flex items-center gap-x-4 border border-transparent bg-secondary p-4 rounded-lg"
                 >
                   <Image
                     src={project.logo}
                     width={60}
                     height={60}
                     alt={project.name}
-                    className="dark:bg-zinc-800 bg-zinc-100 rounded-md p-2"
+                    className="bg-zinc-700 rounded-md p-2"
                   />
                   <div>
                     <h2 className="text-lg tracking-wide mb-1">

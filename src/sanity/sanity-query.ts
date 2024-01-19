@@ -34,16 +34,6 @@ export const profileQuery = groq`*[_type == "profile"]{
   usage
 }`;
 
-export const jobQuery = groq`*[_type == "job"] | order(_createdAt desc){
-  _id,
-  name,
-  jobTitle,
-  "logo": logo.asset->url,
-  url,
-  description,
-  startDate,
-  endDate,
-}`;
 
 export const projectsQuery = groq`*[_type == "project"] | order(_createdAt desc){
   _id, 
@@ -97,5 +87,3 @@ export const singlePostQuery = groq`*[_type == "Post" && slug.current == $slug][
   },
   body,
 }`;
-
-export const heroesQuery = groq`*[_type == "heroe"] | order(_createdAt asc) { _id, _createdAt, name, url, met }`;
