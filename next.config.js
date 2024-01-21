@@ -14,6 +14,7 @@ const nextConfig = {
       { hostname: "tenor.com" },
     ],
   },
+  transpilePackages: ["three"],
 };
 
 module.exports = nextConfig;

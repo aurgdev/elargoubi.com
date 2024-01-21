@@ -7,6 +7,7 @@ import { sanityFetch } from "@/sanity/sanity-client";
 import Image from "next/image";
 import Link from "next/link";
 import EmptyState from "@/components/pages/empty-state";
+import HeroCube from "@/components/cube";
 
 export default async function Home() {
   const profile: ProfileType[] = await sanityFetch({
@@ -38,7 +39,8 @@ export default async function Home() {
             </div>
           ))}
         <Slide delay={0.14}>
-          <HeroSvg />
+          <HeroCube />
+          {/* <HeroSvg /> */}
         </Slide>
       </section>
       <section className="space-y-12">
