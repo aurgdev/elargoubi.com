@@ -1,9 +1,18 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 "use client";
 
 import Image from "next/image";
 import { Button } from "./ui/button";
 import { ChevronDown, ChevronUp } from "lucide-react";
-import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useMotionValueEvent,
+  AnimatePresence,
+  useMotionValue,
+  useTransform,
+  MotionValue,
+} from "framer-motion";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ModeToggle } from "./theme-switch";
@@ -13,8 +22,8 @@ import UnmountStudio from "./pages/Unmount";
 import { Logo } from "./logo";
 
 export default function Navbar() {
-  const [mount, setMount] = useState<boolean>(false);
-  useEffect(() => setMount(true), []);
+  // const [mount, setMount] = useState<boolean>(false);
+  // useEffect(() => setMount(true), []);
   const data = [
     {
       title: "About",
@@ -29,6 +38,38 @@ export default function Navbar() {
       href: "/blog",
     },
   ];
+
+  const MotionLink = motion(Link);
+
+  const mapRange = (
+    inputLower: number,
+    inputUpper: number,
+    outputLower: number,
+    outputUpper: number
+  ) => {
+    const INPUT_RANGE = inputUpper - inputLower;
+    const OUTPUT_RANGE = outputUpper - outputLower;
+
+    return (value: number) =>
+      outputLower + (((value - inputLower) / INPUT_RANGE) * OUTPUT_RANGE || 0);
+  };
+
+  const setTransform = (
+    item: HTMLElement & EventTarget,
+    event: React.PointerEvent,
+    x: MotionValue,
+    y: MotionValue
+  ) => {
+    const bounds = item.getBoundingClientRect();
+    const relativeX = event.clientX - bounds.left;
+    const relativeY = event.clientY - bounds.top;
+    const xRange = mapRange(0, bounds.width, -1, 1)(relativeX);
+    const yRange = mapRange(0, bounds.height, -1, 1)(relativeY);
+    x.set(xRange * 10);
+    y.set(yRange * 10);
+    console.log(xRange);
+  };
+
   const [showNav, setShowNav] = useState<boolean>(false);
   const [hidden, setHidden] = useState(false);
 
@@ -46,7 +87,7 @@ export default function Navbar() {
       setHidden(false);
     }
   });
-  if (!mount) return null;
+  // if (!mount) return null;
 
   return (
     <UnmountStudio>
@@ -113,18 +154,58 @@ export default function Navbar() {
             "visible",
           ]}
         >
-          {data.map((item) => (
-            <li
-              key={item.title}
-              className={cn(
-                "hover:font-semibold",
-                pathname === item.href ? "font-semibold" : ""
-              )}
-              onClick={() => setShowNav(false)}
-            >
-              <Link href={item.href}>{item.title}</Link>
-            </li>
-          ))}
+          <AnimatePresence>
+            {data.map((item) => {
+              const x = useMotionValue(0);
+              const y = useMotionValue(0);
+              const textX = useTransform(x, (latest) => latest * 0.5);
+              const textY = useTransform(y, (latest) => latest * 0.5);
+              return (
+                <motion.li
+                  onPointerMove={(event) => {
+                    const item = event.currentTarget;
+                    setTransform(item, event, x, y);
+                  }}
+                  onPointerLeave={(event) => {
+                    x.set(0);
+                    y.set(0);
+                  }}
+                  style={{ x, y }}
+                  key={item.title}
+                  className={cn(
+                    "hover:font-semibold",
+                    pathname === item.href ? "font-semibold" : ""
+                  )}
+                  onClick={() => setShowNav(false)}
+                >
+                  <MotionLink
+                    className={cn(
+                      "font-medium relative rounded-full text-sm py-2.5 px-5 transition-all duration-500 ease-out hover:bg-secondary-foreground/10",
+                      pathname === item.href
+                        ? "bg-secondary-foreground/10 text-secondary font-bold"
+                        : ""
+                    )}
+                    href={item.href}
+                  >
+                    {" "}
+                    <motion.span
+                      style={{ x: textX, y: textY }}
+                      className="z-10 relative"
+                    >
+                      {item.title}
+                    </motion.span>
+                    {pathname === item.href ? (
+                      <motion.div
+                        transition={{ type: "spring" }}
+                        layoutId="underline"
+                        className="absolute w-full h-full rounded-full left-0 bottom-0 bg-secondary-foreground/80 text-secondary"
+                      ></motion.div>
+                    ) : null}
+                  </MotionLink>
+                </motion.li>
+              );
+            })}
+          </AnimatePresence>
         </motion.ul>
 
         {/* <motion.div

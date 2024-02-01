@@ -9,7 +9,7 @@ export const Logo = () => {
   return (
     <Link href="/">
       <svg
-        className="w-auto lg:h-20 h-6"
+        className="w-auto lg:h-20 h-14"
         width="100%"
         height="100%"
         viewBox="0 0 230 230"
