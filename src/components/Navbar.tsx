@@ -67,7 +67,6 @@ export default function Navbar() {
     const yRange = mapRange(0, bounds.height, -1, 1)(relativeY);
     x.set(xRange * 10);
     y.set(yRange * 10);
-    console.log(xRange);
   };
 
   const [showNav, setShowNav] = useState<boolean>(false);
