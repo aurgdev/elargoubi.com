@@ -1,6 +1,6 @@
 export default function Loading() {
   return (
-    <>
+    <div className="max-w-7xl mx-auto md:px-16 px-6 lg:mt-44 mt-32">
       <div className="flex items-center gap-x-6 mb-10">
         <span className="w-12 h-7 dark:bg-primary-bg bg-zinc-100 border dark:border-zinc-800 border-zinc-200 rounded-sm animate-pulse"></span>
         <span className="w-1/3 h-7 dark:bg-primary-bg bg-zinc-100 border dark:border-zinc-800 border-zinc-200 rounded-sm animate-pulse"></span>
@@ -25,6 +25,6 @@ export default function Loading() {
           <span className="lg:w-60 w-full lg:h-32 h-28 dark:bg-primary-bg bg-zinc-100 border dark:border-zinc-800 border-zinc-200 rounded-sm animate-pulse"></span>
         </div>
       </div>
-    </>
+    </div>
   );
 }

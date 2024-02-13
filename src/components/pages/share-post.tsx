@@ -46,7 +46,7 @@ export default function SharePost({ title, slug, description }: props) {
   };
 
   return (
-    <section className="border-b dark:border-zinc-800 border-zinc-200 pb-10">
+    <section className="border-b  pb-10">
       <h3 className="text-xl font-semibold tracking-tight mb-4">Share Post</h3>
 
       <div className="flex flex-wrap items-center gap-2 tracking-tight">
@@ -56,7 +56,7 @@ export default function SharePost({ title, slug, description }: props) {
             onClick={() => openPopup(data.shareUrl)}
             title={`Share to ${data.name}`}
             aria-label={`Share to ${data.name}`}
-            className="w-12 h-12 p-2 grid place-content-center text-2xl dark:bg-primary-bg bg-zinc-100 border dark:border-zinc-800 border-zinc-200 rounded-md"
+            className="w-12 h-12 p-2 grid place-content-center text-2xl bg-secondary dark:border-zinc-800 border-zinc-200 rounded-md"
           >
             <data.icon aria-hidden="true" />
           </button>

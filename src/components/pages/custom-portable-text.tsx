@@ -20,7 +20,7 @@ export const CustomPortableText: PortableTextComponents = {
           .replaceAll(/[^-\w]+/g, "-")
           .replaceAll(/--+/g, "-")
           .replace(/^-|-$/g, "")}
-        className="font-incognito before:content-['#'] before:hidden hover:before:sm:inline-block hover:before:hidden before:absolute lg:before:-left-5 before:-left-4 lg:before:text-2xl before:text-xl block before:top-1/2 before:-translate-y-1/2 before:opacity-80 dark:before:text-zinc-500 before:text-zinc-400 relative font-bold tracking-tight dark:text-zinc-100 lg:text-4xl text-3xl text-zinc-700 my-8"
+        className="font-incognito before:content-['#'] before:hidden hover:before:sm:inline-block hover:before:hidden before:absolute lg:before:-left-5 before:-left-4 lg:before:text-2xl before:text-xl block before:top-1/2 before:-translate-y-1/2 before:opacity-80 relative font-bold tracking-tight lg:text-4xl text-3xl my-8"
       >
         <HashScroll text={children} />
       </h2>
@@ -33,7 +33,7 @@ export const CustomPortableText: PortableTextComponents = {
           .replaceAll(/[^-\w]+/g, "-")
           .replaceAll(/--+/g, "-")
           .replace(/^-|-$/g, "")}
-        className="font-mono before:content-['#'] before:hidden hover:before:sm:inline-block hover:before:hidden before:absolute lg:before:-left-5 before:-left-4 lg:before:text-2xl before:text-xl before:top-1/2 before:-translate-y-1/2 before:opacity-80 dark:before:text-zinc-500 before:text-zinc-400 relative block lg:font-bold font-semibold tracking-tight lg:text-3xl text-2xl dark:text-zinc-100 text-zinc-700 my-6"
+        className="font-mono before:content-['#'] before:hidden hover:before:sm:inline-block hover:before:hidden before:absolute lg:before:-left-5 before:-left-4 lg:before:text-2xl before:text-xl before:top-1/2 before:-translate-y-1/2 before:opacity-80  relative block lg:font-bold font-semibold tracking-tight lg:text-3xl text-2xl my-6"
       >
         <HashScroll text={children} />
       </h3>
@@ -46,15 +46,15 @@ export const CustomPortableText: PortableTextComponents = {
           .replaceAll(/[^-\w]+/g, "-")
           .replaceAll(/--+/g, "-")
           .replace(/^-|-$/g, "")}
-        className="font-incognito before:content-['#'] before:hidden hover:before:sm:inline-block hover:before:hidden before:absolute lg:before:-left-6 before:-left-4 lg:before:text-2xl before:text-xl before:top-1/2 before:-translate-y-1/2 before:opacity-80 dark:before:text-zinc-500 before:text-zinc-400 relative inline-block font-semibold tracking-tight text-xl dark:text-zinc-100 text-zinc-700 mb-2 mt-4"
+        className="font-incognito before:content-['#'] before:hidden hover:before:sm:inline-block hover:before:hidden before:absolute lg:before:-left-6 before:-left-4 lg:before:text-2xl before:text-xl before:top-1/2 before:-translate-y-1/2 before:opacity-80 relative inline-block font-semibold tracking-tight text-xl mb-2 mt-4"
       >
         <HashScroll text={children} />
       </h4>
     ),
     blockquote: ({ children }) => (
-      <blockquote className="relative overflow-hidden tracking-tight text-lg my-8 lg:py-6 lg:pl-6 pr-12 p-4 border dark:border-zinc-800 border-zinc-200 rounded-md">
+      <blockquote className="relative overflow-hidden tracking-tight text-lg my-8 lg:py-6 lg:pl-6 pr-12 p-4 border rounded-md">
         <Quote
-          className="text-7xl absolute -top-7 -right-5 -rotate-12 dark:text-zinc-800 text-zinc-200"
+          className="text-7xl absolute -top-7 -right-5 -rotate-12 "
           aria-hidden="true"
         />
         {children}
@@ -68,9 +68,7 @@ export const CustomPortableText: PortableTextComponents = {
       </em>
     ),
     strong: ({ children }) => (
-      <strong className="font-bold dark:text-zinc-300 text-zinc-700">
-        {children}
-      </strong>
+      <strong className="font-bold ">{children}</strong>
     ),
     link: ({ children, value }) => {
       return (

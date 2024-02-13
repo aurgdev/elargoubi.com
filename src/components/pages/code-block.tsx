@@ -14,6 +14,7 @@ import yaml from "refractor/lang/yaml";
 import graphql from "refractor/lang/graphql";
 import json from "refractor/lang/json";
 import { Copy } from "lucide-react";
+import { useState } from "react";
 
 // Supported languages: https://prismjs.com/#supported-languages
 Refractor.registerLanguage(js);
@@ -49,17 +50,17 @@ export default function CodeBlock({ value }: codeTypes) {
 
   return (
     <div className="my-6">
-      <div className="flex items-center justify-between bg-zinc-50 dark:bg-[#141414] border dark:border-zinc-800 border-zinc-200 rounded-t-lg px-4 py-3 translate-y-2">
+      <div className="flex items-center justify-between bg-secondary border  rounded-t-lg px-4 py-3 translate-y-2">
         <p className="text-sm">{value.filename || ""}</p>
         <button>
-          <Copy />
+          <Copy className="w-5 h-5" />
         </button>
         {/* // TODO: Implement copy code to clipboard feature */}
       </div>
       <Refractor
         language={value.language ? value.language : "jsx"}
         value={value.code}
-        className="text-sm border-x border-b dark:border-zinc-800 border-zinc-200 rounded-b-lg tracking-normal"
+        className="text-sm border-x border-b py-5 px-3 dark:border-zinc-800 border-zinc-200 rounded-b-lg tracking-normal"
       />
     </div>
   );
