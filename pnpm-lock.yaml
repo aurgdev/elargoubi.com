@@ -6,114 +6,114 @@ settings:
 
 dependencies:
   '@portabletext/react':
-    specifier: 3.0.11
+    specifier: ^3.0.11
     version: 3.0.11(react@18.2.0)
   '@radix-ui/react-slot':
-    specifier: 1.0.2
+    specifier: ^1.0.2
     version: 1.0.2(@types/react@18.2.48)(react@18.2.0)
   '@react-three/drei':
-    specifier: 9.96.1
+    specifier: ^9.96.1
     version: 9.96.1(@react-three/fiber@8.15.14)(@types/react@18.2.48)(@types/three@0.160.0)(react-dom@18.2.0)(react@18.2.0)(three@0.160.0)
   '@react-three/fiber':
-    specifier: 8.15.14
+    specifier: ^8.15.14
     version: 8.15.14(react-dom@18.2.0)(react@18.2.0)(three@0.160.0)
   '@sanity/client':
-    specifier: 6.11.1
+    specifier: ^6.11.1
     version: 6.11.1
   '@sanity/code-input':
-    specifier: 4.1.2
-    version: 4.1.2(@babel/runtime@7.23.9)(@codemirror/lint@6.5.0)(@codemirror/theme-one-dark@6.1.2)(@lezer/common@1.2.1)(codemirror@6.0.1)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(sanity@3.25.0)(styled-components@6.1.8)
+    specifier: ^4.1.1
+    version: 4.1.1(@babel/runtime@7.23.9)(@codemirror/lint@6.5.0)(@codemirror/theme-one-dark@6.1.2)(@lezer/common@1.2.1)(codemirror@6.0.1)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(sanity@3.25.0)(styled-components@6.1.8)
   '@sanity/image-url':
-    specifier: 1.0.2
+    specifier: ^1.0.2
     version: 1.0.2
   '@sanity/vision':
-    specifier: 3.25.0
+    specifier: ^3.25.0
     version: 3.25.0(@babel/runtime@7.23.9)(@codemirror/lint@6.5.0)(@codemirror/state@6.4.0)(@codemirror/theme-one-dark@6.1.2)(@lezer/common@1.2.1)(codemirror@6.0.1)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(styled-components@6.1.8)
   class-variance-authority:
-    specifier: 0.7.0
+    specifier: ^0.7.0
     version: 0.7.0
   clsx:
-    specifier: 2.1.0
+    specifier: ^2.1.0
     version: 2.1.0
   framer-motion:
-    specifier: 10.18.0
+    specifier: ^10.18.0
     version: 10.18.0(react-dom@18.2.0)(react@18.2.0)
   framer-motion-3d:
-    specifier: 10.18.0
+    specifier: ^10.18.0
     version: 10.18.0(@react-three/fiber@8.15.14)(react-dom@18.2.0)(react@18.2.0)(three@0.160.0)
   geist:
-    specifier: 1.2.1
+    specifier: ^1.2.1
     version: 1.2.1(next@14.0.4)
   lucide-react:
-    specifier: 0.309.0
+    specifier: ^0.309.0
     version: 0.309.0(react@18.2.0)
   next:
-    specifier: 14.0.4
+    specifier: ^14.0.4
     version: 14.0.4(@babel/core@7.23.9)(react-dom@18.2.0)(react@18.2.0)
   next-sanity:
-    specifier: 7.0.10
+    specifier: ^7.0.10
     version: 7.0.10(@sanity/client@6.11.1)(@sanity/icons@2.10.2)(@sanity/types@3.28.0)(@sanity/ui@2.0.2)(next@14.0.4)(react@18.2.0)(sanity@3.25.0)(styled-components@6.1.8)
   next-themes:
-    specifier: 0.2.1
+    specifier: ^0.2.1
     version: 0.2.1(next@14.0.4)(react-dom@18.2.0)(react@18.2.0)
   react:
-    specifier: 18.2.0
+    specifier: ^18.2.0
     version: 18.2.0
   react-dom:
-    specifier: 18.2.0
+    specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
   sanity:
-    specifier: 3.25.0
+    specifier: ^3.25.0
     version: 3.25.0(@types/node@20.11.5)(@types/react@18.2.48)(react-dom@18.2.0)(react@18.2.0)(styled-components@6.1.8)
   styled-components:
-    specifier: 6.1.8
+    specifier: ^6.1.8
     version: 6.1.8(react-dom@18.2.0)(react@18.2.0)
   tailwind-merge:
-    specifier: 2.2.0
+    specifier: ^2.2.0
     version: 2.2.0
   tailwindcss-animate:
-    specifier: 1.0.7
+    specifier: ^1.0.7
     version: 1.0.7(tailwindcss@3.4.1)
   three:
-    specifier: 0.160.0
+    specifier: ^0.160.0
     version: 0.160.0
 
 devDependencies:
   '@types/node':
-    specifier: 20.11.5
+    specifier: ^20.11.5
     version: 20.11.5
   '@types/react':
-    specifier: 18.2.48
+    specifier: ^18.2.48
     version: 18.2.48
   '@types/react-dom':
-    specifier: 18.2.18
+    specifier: ^18.2.18
     version: 18.2.18
   '@types/refractor':
-    specifier: 3.4.0
+    specifier: ^3.4.0
     version: 3.4.0
   '@types/three':
-    specifier: 0.160.0
+    specifier: ^0.160.0
     version: 0.160.0
   autoprefixer:
-    specifier: 10.4.17
+    specifier: ^10.4.17
     version: 10.4.17(postcss@8.4.33)
   eslint:
-    specifier: 8.56.0
+    specifier: ^8.56.0
     version: 8.56.0
   eslint-config-next:
-    specifier: 14.0.4
+    specifier: ^14.0.4
     version: 14.0.4(eslint@8.56.0)(typescript@5.3.3)
   postcss:
-    specifier: 8.4.33
+    specifier: ^8.4.33
     version: 8.4.33
   react-refractor:
-    specifier: 2.1.7
+    specifier: ^2.1.7
     version: 2.1.7(react@18.2.0)
   tailwindcss:
-    specifier: 3.4.1
+    specifier: ^3.4.1
     version: 3.4.1
   typescript:
-    specifier: 5.3.3
+    specifier: ^5.3.3
     version: 5.3.3
 
 packages:
@@ -1627,14 +1627,14 @@ packages:
       - supports-color
     dev: false
 
-  /@sanity/code-input@4.1.2(@babel/runtime@7.23.9)(@codemirror/lint@6.5.0)(@codemirror/theme-one-dark@6.1.2)(@lezer/common@1.2.1)(codemirror@6.0.1)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(sanity@3.25.0)(styled-components@6.1.8):
-    resolution: {integrity: sha512-XvUsaUIbl/FV/qP03XItG1UmuxeDC+EPrmFf9VCsE6enhaeTDJgCrtFfXIdS4D4Hmi4R8RclDEddFl58iRiSKA==}
+  /@sanity/code-input@4.1.1(@babel/runtime@7.23.9)(@codemirror/lint@6.5.0)(@codemirror/theme-one-dark@6.1.2)(@lezer/common@1.2.1)(codemirror@6.0.1)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(sanity@3.25.0)(styled-components@6.1.8):
+    resolution: {integrity: sha512-dw1FiHEt9CPuh+Q4YTIdQnH2+RUXYSlXSeoKlfj1rPwIZ/nFYum2ANncHwn35h83QfwsJLFpPHTnOzRpKQR/uw==}
     engines: {node: '>=14'}
     peerDependencies:
       react: ^18
       react-dom: ^18
       sanity: ^3
-      styled-components: ^5.2 || ^6
+      styled-components: ^5.2
     dependencies:
       '@codemirror/autocomplete': 6.12.0(@codemirror/language@6.10.1)(@codemirror/state@6.4.0)(@codemirror/view@6.24.0)(@lezer/common@1.2.1)
       '@codemirror/commands': 6.3.3
@@ -1652,6 +1652,7 @@ packages:
       '@codemirror/view': 6.24.0
       '@juggle/resize-observer': 3.4.0
       '@lezer/highlight': 1.2.0
+      '@sanity/icons': 2.10.2(react@18.2.0)
       '@sanity/incompatible-plugin': 1.0.4(react-dom@18.2.0)(react@18.2.0)
       '@sanity/ui': 1.9.3(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(styled-components@6.1.8)
       '@uiw/codemirror-themes': 4.21.21(@codemirror/language@6.10.1)(@codemirror/state@6.4.0)(@codemirror/view@6.24.0)

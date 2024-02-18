@@ -1,20 +1,18 @@
 import Refractor from "react-refractor";
-import js from "refractor/lang/javascript";
-import ts from "refractor/lang/typescript";
-import tsx from "refractor/lang/tsx";
-import jsx from "refractor/lang/jsx";
-import sql from "refractor/lang/sql";
 import bash from "refractor/lang/bash";
-import markdown from "refractor/lang/markdown";
 import css from "refractor/lang/css";
-import scss from "refractor/lang/scss";
-import python from "refractor/lang/python";
-import html from "refractor/lang/markup";
-import yaml from "refractor/lang/yaml";
 import graphql from "refractor/lang/graphql";
+import js from "refractor/lang/javascript";
 import json from "refractor/lang/json";
-import { Copy } from "lucide-react";
-import { useState } from "react";
+import jsx from "refractor/lang/jsx";
+import markdown from "refractor/lang/markdown";
+import html from "refractor/lang/markup";
+import python from "refractor/lang/python";
+import scss from "refractor/lang/scss";
+import sql from "refractor/lang/sql";
+import tsx from "refractor/lang/tsx";
+import ts from "refractor/lang/typescript";
+import yaml from "refractor/lang/yaml";
 
 // Supported languages: https://prismjs.com/#supported-languages
 Refractor.registerLanguage(js);
@@ -50,17 +48,13 @@ export default function CodeBlock({ value }: codeTypes) {
 
   return (
     <div className="my-6">
-      <div className="flex items-center justify-between bg-secondary border  rounded-t-lg px-4 py-3 translate-y-2">
+      <div className="flex items-center justify-between bg-secondary border rounded-t-lg px-4 py-3 translate-y-2">
         <p className="text-sm">{value.filename || ""}</p>
-        <button>
-          <Copy className="w-5 h-5" />
-        </button>
-        {/* // TODO: Implement copy code to clipboard feature */}
       </div>
       <Refractor
         language={value.language ? value.language : "jsx"}
         value={value.code}
-        className="text-sm border-x border-b py-5 px-3 dark:border-zinc-800 border-zinc-200 rounded-b-lg tracking-normal"
+        className="text-sm border-x border-b  bg-secondary/20 rounded-b-lg tracking-normal"
       />
     </div>
   );

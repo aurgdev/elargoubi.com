@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "prism.css";
+
 @layer base {
   :root {
     --elastic-out: linear(0,

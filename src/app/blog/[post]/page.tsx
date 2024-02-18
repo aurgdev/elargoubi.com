@@ -134,7 +134,7 @@ export default async function Post({ params }: Props) {
               />
             </div>
 
-            <div className="mt-8 opacity-90  leading-relaxed tracking-tight text-lg">
+            <div className="mt-8 dark:text-zinc-400 text-zinc-600 leading-relaxed tracking-tight text-lg">
               <PortableText value={post.body} components={CustomPortableText} />
             </div>
           </div>
