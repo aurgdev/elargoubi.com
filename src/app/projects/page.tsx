@@ -6,6 +6,7 @@ import type { ProjectType } from "@/types";
 import { sanityFetch } from "@/sanity/sanity-client";
 import { Slide } from "@/components/animation/slide";
 import EmptyState from "@/components/pages/empty-state";
+import ProjectCard from "@/components/pages/project";
 
 export const metadata: Metadata = {
   title: "Project",
@@ -36,29 +37,33 @@ export default async function Project() {
 
       <Slide delay={0.1}>
         {projects.length > 0 ? (
-          <section className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 mb-12 ">
+          <ul
+            role="list"
+            className="grid grid-cols-1 gap-x-10 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
+          >
             {projects.map((project) => (
-              <Link
-                href={`/projects/${project.slug}`}
-                key={project._id}
-                className="flex items-center gap-x-4 border border-transparent bg-secondary p-4 rounded-lg"
-              >
-                <Image
-                  src={project.logo}
-                  width={60}
-                  height={60}
-                  alt={project.name}
-                  className="bg-zinc-700 rounded-md p-2"
-                />
-                <div>
-                  <h2 className="text-lg tracking-wide mb-1">{project.name}</h2>
-                  <div className="text-sm opacity-80 dark:opacity-70">
-                    {project.tagline}
-                  </div>
-                </div>
-              </Link>
+              <ProjectCard key={project._id} project={project} />
+              // <Link
+              //   href={`/projects/${project.slug}`}
+              //   key={project._id}
+              //   className="flex items-center gap-x-4 border border-transparent bg-secondary p-4 rounded-lg"
+              // >
+              //   <Image
+              //     src={project.logo}
+              //     width={60}
+              //     height={60}
+              //     alt={project.name}
+              //     className="bg-zinc-700 rounded-md p-2"
+              //   />
+              //   <div>
+              //     <h2 className="text-lg tracking-wide mb-1">{project.name}</h2>
+              //     <div className="text-sm opacity-80 dark:opacity-70">
+              //       {project.tagline}
+              //     </div>
+              //   </div>
+              // </Link>
             ))}
-          </section>
+          </ul>
         ) : (
           <EmptyState value="Projects" />
         )}

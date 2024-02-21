@@ -20,6 +20,14 @@ const project = {
             type: "string",
             validation: (rule) => rule.max(60).required(),
         }),
+        defineField({
+            name: "stack",
+            title: "project Stack",
+            type: "array",
+            description: "Add technologies used in this project",
+            of: [{ type: "string" }],
+            validation: (rule) => rule.required(),
+        }),
         {
             name: "slug",
             title: "Slug",
@@ -36,6 +44,13 @@ const project = {
         {
             name: "projectUrl",
             title: "Project URL",
+            type: "url",
+            description:
+                "Leaving this URL blank will add a coming soon to the button.",
+        },
+        {
+            name: "githubUrl",
+            title: "Github URL",
             type: "url",
             description:
                 "Leaving this URL blank will add a coming soon to the button.",

@@ -40,6 +40,9 @@ export const projectsQuery = groq`*[_type == "project"] | order(_createdAt desc)
   name,
   "slug": slug.current,
   tagline,
+  githubUrl,
+  projectUrl,
+  stack,
   "logo": logo.asset->url,
 }`;
 
@@ -47,6 +50,8 @@ export const singleProjectQuery = groq`*[_type == "project" && slug.current == $
   _id,
   name,
   projectUrl,
+  githubUrl,
+  stack,
   coverImage {
     "image": asset->url,
     "lqip": asset->metadata.lqip,

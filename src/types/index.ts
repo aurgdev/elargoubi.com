@@ -42,12 +42,14 @@ export type ProjectType = {
     slug: string;
     tagline: string;
     projectUrl: string;
+    githubUrl: string;
     logo: string;
     coverImage: {
         image: string;
         alt: string | null;
         lqip: string;
     };
+    stack: string[];
     description: PortableTextBlock[];
 };
 
