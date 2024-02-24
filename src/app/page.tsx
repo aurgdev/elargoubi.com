@@ -1,15 +1,11 @@
+import Laptop from "@/components/3d-laptop";
+import { Slide } from "@/components/animation/slide";
+import EmptyState from "@/components/pages/empty-state";
+import ProjectCard from "@/components/pages/project";
+import Social from "@/components/pages/social";
+import { sanityFetch } from "@/sanity/sanity-client";
 import { profileQuery, projectsQuery } from "@/sanity/sanity-query";
 import type { ProfileType, ProjectType } from "@/types";
-import HeroSvg from "@/components/icons/HeroSvg";
-import Social from "@/components/pages/social";
-import { Slide } from "@/components/animation/slide";
-import { sanityFetch } from "@/sanity/sanity-client";
-import Image from "next/image";
-import Link from "next/link";
-import EmptyState from "@/components/pages/empty-state";
-import HeroCube from "@/components/cube";
-import Project from "./projects/page";
-import ProjectCard from "@/components/pages/project";
 
 export default async function Home() {
   const profile: ProfileType[] = await sanityFetch({
@@ -23,7 +19,7 @@ export default async function Home() {
 
   return (
     <main className="max-w-7xl mx-auto md:px-16 px-6 lg:mt-44 mt-32">
-      <section className="flex lg:flex-row flex-col items-center justify-between gap-x-12 mb-16 overflow-hidden">
+      <section className="flex lg:flex-row flex-col items-center justify-between gap-x-12 pb-16 ">
         {profile &&
           profile.map((data) => (
             <div key={data._id} className="lg:max-w-2xl max-w-2xl">
@@ -41,8 +37,7 @@ export default async function Home() {
             </div>
           ))}
         <Slide delay={0.14}>
-          <HeroCube />
-          {/* <HeroSvg /> */}
+          <Laptop />
         </Slide>
       </section>
       <section className="space-y-12">
@@ -60,14 +55,11 @@ export default async function Home() {
         </Slide>
         <Slide delay={0.1}>
           {projects.length > 0 ? (
-            <ul
-              role="list"
-              className="grid grid-cols-1 gap-x-10 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
-            >
+            <div className="grid grid-cols-1 gap-x-10 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
               {projects.map((project) => (
                 <ProjectCard key={project._id} project={project} />
               ))}
-            </ul>
+            </div>
           ) : (
             <EmptyState value="Projects" />
           )}

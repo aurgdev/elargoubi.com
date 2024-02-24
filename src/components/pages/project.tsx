@@ -9,13 +9,11 @@ type ProjectProps = {
 };
 
 export default function ProjectCard({ project }: ProjectProps) {
-  console.log(project);
-
   return (
     <Card className="group relative flex flex-col rounded-2xl justify-between p-5 transition duration-200 hover:bg-secondary">
       <Link href={`/projects/${project.slug}`}>
         <div>
-          <div className="relative h-56 w-full overflow-hidden rounded-2xl">
+          <div className="relative h-40 sm:h-56 w-full overflow-hidden rounded-2xl">
             <Image
               src={project.logo}
               alt={project.name}
@@ -26,7 +24,7 @@ export default function ProjectCard({ project }: ProjectProps) {
             />
           </div>
           <h2 className="mt-6 text-lg font-semibold opacity-90">
-            <p>{project.name}</p>
+            {project.name}
           </h2>
           <p className="relative z-10 mt-2 text-sm opacity-60 ">
             {project.tagline}
@@ -43,7 +41,7 @@ export default function ProjectCard({ project }: ProjectProps) {
           </div>
         </div>
         <div className="flex items-center p-auto justify-between">
-          <p className="relative z-10 mt-6 flex text-sm font-medium text-blue-700 transition hover:text-blue-800 dark:text-blue-300 dark:hover:text-blue-500 ">
+          <div className="relative z-10 mt-6 flex text-sm font-medium text-blue-700 transition hover:text-blue-800 dark:text-blue-300 dark:hover:text-blue-500 ">
             {project.projectUrl && (
               <>
                 <LinkIcon className="h-6 w-6 flex-none" />
@@ -57,8 +55,8 @@ export default function ProjectCard({ project }: ProjectProps) {
                 </Link>
               </>
             )}
-          </p>
-          <p className="relative z-10 mt-6 flex text-sm font-medium text-blue-700 transition hover:text-blue-800 dark:text-blue-300 dark:hover:text-blue-500 ">
+          </div>
+          <div className="relative z-10 mt-6 flex text-sm font-medium text-blue-700 transition hover:text-blue-800 dark:text-blue-300 dark:hover:text-blue-500 ">
             {project.githubUrl && (
               <>
                 <Github className="h-6 w-6 flex-none" />
@@ -72,7 +70,7 @@ export default function ProjectCard({ project }: ProjectProps) {
                 </Link>
               </>
             )}
-          </p>
+          </div>
         </div>
       </Link>
     </Card>
