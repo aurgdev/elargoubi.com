@@ -111,13 +111,10 @@ function Model(props: any) {
 }
 
 export default function Laptop() {
-  const [mount, setMount] = React.useState(false);
-  React.useEffect(() => setMount(true), []);
-  if (!mount) return null;
   return (
     <Canvas
-      camera={{ position: [-5, 0, -15], fov: 55 }}
-      style={{
+    camera={{ position: [-5, 0, -15], fov: 55 }}
+    style={{
         height: "400px",
         width: "500px",
       }}
