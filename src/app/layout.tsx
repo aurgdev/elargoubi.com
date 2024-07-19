@@ -7,6 +7,7 @@ import { siteConfig } from "@/config/site";
 import Navbar from "@/components/Navbar";
 import { cn } from "@/lib/utils";
 import Footer from "@/components/Footer";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 export const viewport: Viewport = {
   themeColor: [
@@ -56,6 +57,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <GoogleTagManager gtmId={process.env.GOOGLE_ID!} />
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
